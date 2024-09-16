@@ -1,0 +1,379 @@
+DefaultListMenu
+{
+    Font "LowQFont", "DarkRed"
+    Selector "M_SKULL1", -24, -6
+    Linespacing 18
+}
+
+ListMenu "MainMenu"
+{
+IfGame(Doom, Chex)
+	{
+		StaticPatch 94, 2, "M_DOOM"
+		Position 97, 72
+		IfOption(ReadThis)
+		{
+			Position 97, 64
+		}
+	}
+	IfGame(Strife)
+	{
+		StaticPatch 84, 2, "M_STRIFE"
+		Position 97, 45
+	}
+	IfGame(Heretic)
+	{
+		StaticPatch 88, 0, "M_HTIC"
+		StaticPatch 40, 10, "M_SKL01"
+		StaticPatch 232, 10, "M_SKL00"
+		Position 110, 56
+	}
+	IfGame(Hexen)
+	{
+		StaticPatch 88, 0, "M_HTIC"
+		StaticPatch 37, 80, "FBULB0"
+		StaticPatch 278, 80, "FBULA0"
+		Position 110, 56
+	}
+
+	IfGame(Doom, Strife, Chex)
+	{
+		TextItem "New Game", "n", "PlayerclassMenu"
+		ifOption(SwapMenu)
+		{
+			TextItem "Load Game", "l", "LoadGameMenu"
+			TextItem "Save Game", "s", "SaveGameMenu"
+			TextItem "Options", "o", "OptionsMenu"/////////////
+			TextItem "Rampage Brutality", "b", "BrutalMenu"
+		}
+		else
+		{
+			TextItem "Options", "o", "OptionsMenu"/////////////////////
+			TextItem "Rampage Brutality", "b", "BrutalMenu"
+			TextItem "Load Game", "l", "LoadGameMenu"
+			TextItem "Save Game", "s", "SaveGameMenu"
+		}
+		TextItem "Quit Game", "q", "QuitMenu"
+	}
+
+	IfGame(Heretic, Hexen)
+	{
+		TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
+		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"/////////////////////
+		TextItem "Rampage Brutality", "b", "BrutalMenu"
+		TextItem "$MNU_GAMEFILES", "g", "GameFilesMenu"
+		TextItem "$MNU_INFO", "i", "ReadThisMenu"
+		TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+	}
+}
+
+ListMenu "PlayerclassMenu"
+{
+	StaticTextCentered 160, 15, "Select Game Mode"
+	Position 30, 50
+	// The rest of this menu will be set up based on the actual player definitions.
+}
+
+OptionMenu "BrutalMenu"
+{
+	Title "Rampage Brutality"
+	Submenu "RB Performance Options",		"BrutalDoomOptionsPerformance"
+	Submenu "RB Level Options",			"BrutalDoomOptionsLevel"
+	Submenu "RB Doom Gameplay Options",			"BrutalDoomOptionsGame"
+	Submenu "RB Player Options",			"BrutalDoomOptionsPlayer"
+	StaticText " "
+	Command "Go to BD Testing Map",			"map test"
+	Command "Go to BD Testing Map(Small)",			"map test_old"
+}
+
+OptionMenu "BrutalDoomOptionsPerformance"
+{
+   Title "Performance Options"
+   StaticText "All changes made here have immediate effect."
+   StaticText " "
+  Option "Enable Performance Mode","performancemode", "OnOff"
+	StaticText "This limits, disables, or replaces advanced decorative effects"
+	StaticText " " 
+  Option "Current Sourceport", "isrunningzandronum", "SelectEngineType"
+  StaticText "To ensure maximum compatibility, select the"
+  StaticText "sourceport you are using to run Brutal Doom."
+  StaticText " "
+  Option "Max Wall Decals", "cl_maxdecals", "maxdecals"
+  StaticText "Set how many bulletholes, blast marks, and"
+  StaticText "blood splats are rendered simultaneously."
+  StaticText " "
+  Option "Max Gibs and Blood Pools", "sv_corpsequeuesize", "maxgibs"
+  StaticText "Set how many severed body parts and"
+  StaticText "blood pools are rendered simultaneously."
+  StaticText " "
+  Option "Blood Amount (GZDoom/LZDoom)", "zdoombrutalblood", "BrutalBlood"
+  Option "Blood Amount (Zandronum)", "bd_bloodamount", "BrutalBlood"
+  StaticText "Set the intensity of all blood visual effects."
+  StaticText " "
+  Option "Enable Janitor (GZDoom/LZDoom)", "zdoombrutaljanitor", "YesOrNo"
+  Option "Enable Janitor (Zandronum)", "bd_lowgraphicsmode", "YesOrNo"
+  StaticText "If enabled, gibs will disappear after 30 seconds."
+  StaticText " "
+  Option "Persistent Bullet Casings", "bd_infinitecasings", "YesOrNo"
+  StaticText "If enabled, all spent bullet casings will"
+  StaticText "remain on the current map indefinitely."
+  StaticText " "
+  Option "Water Ripple Effects", "bd_disablewaterripples2", "YesOrNoFalse"
+  StaticText "Enables rendering of 3D water ripples"
+  StaticText "when moving around in liquids."
+  StaticText " "
+}
+
+OptionMenu "BDRBOptions"
+{
+	Title "Brutal Doom RB Settings"
+	StaticText " "
+	StaticText " "
+	Submenu "Monsters Settings (Incomplete)",				"RB_Monsters_Options"
+	StaticText " "
+	StaticText "change the behaviors or forbid some actions"
+	StaticText " "
+	Submenu "Gameplay Settings (Unfinished)",			"RB_Weapons_Options"
+	StaticText " "
+	StaticText "you can disable actions or change some weapons behaviors"
+	StaticText " "
+	Submenu "Items Settings (not Ready)",					"RB_Items_Options"
+	StaticText " "
+	StaticText "options to change or diseable spawn or espesific items"
+	StaticText " "
+	
+}
+
+OptionMenu "BrutalDoomOptionsLevel"
+{
+	Title "Level Options"
+	StaticText "All changes made here will take effect on next level"
+	StaticText "or when you start a new game."
+	StaticText " "
+
+	Option "Vanilla Monsters", "bd_classicmonsters", "YesOrNo"
+	StaticText "Spawns classic enemies instead of their"
+	StaticText "Brutal Doom equivalents."
+	StaticText " "
+
+	Option "Fuzzy Spectre", "bd_fuzzyspectre", "YesOrNo"
+	StaticText "Spawns Brutal Doom Spectres"
+	StaticText "but with the fuzzy renderstyle"
+	StaticText " "
+
+	Option "Advanced Decorative Objects", "bd_disabledecorations", "DisabledOption"
+	StaticText "Enable fancy particle effects for torches and lamps."
+	StaticText " "
+
+	Option "Level Enhancement System", "bd_disablemapenhancements", "DisabledOption"
+	StaticText "Improves several maps with better textures,"
+	StaticText  "new decorations and sometimes new enemies."
+	StaticText " "
+
+	Option "Level Enhancement System - Disable Voxels", "bd_voxeldec", "YesorNoFalse"
+	StaticText "Disable voxel decorations to prevent crashes on Android."
+	StaticText " "
+
+	Option "New Weapons", "bd_disablenewguns", "DisabledOption"
+	StaticText "Enables spawning of new weapons, such as the"
+	StaticText "SMG, Assault Shotgun, Machinegun, and Railgun."
+	StaticText " "
+
+	Option "New Enemies", "bd_disablenewenemies", "DisabledOption"
+	StaticText "Enables spawning of new enemy types, such as"
+	StaticText "the Volcabus and Ancient Arachnotron."
+	StaticText " "
+
+	Option "Footstep Sounds", "bd_footstepsounds", "YesOrNo"
+	StaticText "Toggles the sound of the player's footsteps."
+	StaticText "Has no impact on actual gameplay."
+	StaticText " "
+	
+	Option "Level Enhancement System", "bd_disablemapenhancements", "DisabledOption"
+	StaticText "Improves several maps with better textures,"
+	StaticText  "new decorations and sometimes new enemies."
+	StaticText " "
+	
+	StaticText " "
+	Option "Replace Captured Marines",				"bd_replacemarines", "OnOff"
+	StaticText "Replace captured marines with traditional Blurspheres"
+	StaticText " "
+	StaticText " "
+	
+	Option "Disabled Helmet Animation",				"bd_NoHelmetAnimation", "OnOff"
+	StaticText "Remove animation of putting on your helmet at the start"
+	StaticText " "
+	StaticText " "
+	Option "$PB_RESPECT", "pb_respectweapons", "OnOff"
+	StaticText " "
+	StaticText " "
+
+	Option "Spawn Demon Spheres", "bd_disabledemonspheres", "YesOrNoFalse"
+	StaticText "Enables spawning of Demon Spheres, which allow the"
+	StaticText "player to become a Revenant or Baron of Hell."
+	StaticText " "
+
+	// StaticText "Following CVARs still doesn't works:"
+	//Option "Cruelty Bonuses", "bd_disablecrueltybonus", "DisabledOption"
+	// Option "Bloody Screen Effects", "bd_disablebloodyscreen", "DisabledOption"
+	Option "Rescuable Marines", "bd_disablefriendlymarines", "YesOrNoFalse"
+	StaticText "Replaces Blurspheres with captured Marines, who can"
+	StaticText "be freed to lend additional fire support in combat."
+	StaticText " "
+
+	Option "Destructible Rocket Ammo", "bd_shootablerocketammo", "YesOrNo"
+	StaticText "Allows rocket ammunition to be detonated by the player's"
+	StaticText "weapons fire. Extremely hazardous to anyone nearby."
+	StaticText " "
+}
+
+OptionMenu "BrutalDoomOptionsGame"
+{
+   Title "Gameplay Options"
+   StaticText "All changes made here have an immediate effect."
+   StaticText " "
+   Option "Rocket Launcher Backblast", "bd_rocketbackblast", "YesOrNo"
+   StaticText " "
+  StaticText "When enabled, you will harm yourself if using the"
+  StaticText "Rocket Launcher with insufficient clearance behind you."
+  StaticText " "
+   Command "Enable Reloading",			"take turboreload"
+   Command "Skip Reloading",			"give turboreload"
+   StaticText " "
+   StaticText "If using 'Skip Reloading', reload animations"
+   StaticText "are skipped entirely."
+   StaticText " "
+   Command "Enable Automatic Reloading",			"take noautoreload"
+   Command "Enable Manual Reloading Only",			"give noautoreload"
+   StaticText " "
+   StaticText "Set whether or not you have to manually reload"
+   StaticText "each time you empty your current magazine."
+   StaticText " "
+   StaticText "Pump Shot Gun Settings"
+	StaticText " "
+	
+	Option "Alternate Pump Animation",	"pb_SGPumpFromHip", "OnOff"
+}
+
+
+OptionMenu "BrutalDoomOptionsPlayer"
+{
+   Title "Player Options"
+   StaticText "All changes made here require the level to"
+   StaticText "be restarted or take effect on next level."
+   StaticText " "
+   Option "Player Gender", "gender", "genderOption"
+   StaticText "Set the player's gender. Only works on Zandronum"
+   StaticText " "
+   Option "HUD Type", "bd_sbartype", "HUDType"
+   Option "HUD Size", "screenblocks", "screenblocksize"
+   Option "Show enemy health", "bd_disablescanner", "YesorNoFalse"
+   StaticText " "
+   StaticText " "
+   Command "Force HUD Refresh",			"pukename BDRespawn"
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   Option "Force GZDoom UI Scale", "uiscale", "uiscalesize"
+   StaticText "Change this if you are having trouble"
+   StaticText "with HUD scaling on GZDoom."
+   StaticText "(does nothing on Zandronum)"
+}
+
+OptionValue "BrutalBlood"
+{
+	1, "1) Low"
+	2, "2) Normal"
+	3, "3) Lots"
+	4, "4) Extreme"
+	666, "5) High"
+}
+
+OptionValue "YesOrNo"
+{
+	0, "No"
+	1, "Yes"
+}
+
+OptionValue"PDAsettings"
+{
+   0, "PDASON"
+   1, "PDASOFF"
+}
+
+OptionValue "DisabledOption"
+{
+	0, "Enabled"
+	1, "Disabled"
+}
+
+OptionValue "YesOrNoFalse"
+{
+	1, "No"
+	0, "Yes"
+}
+
+OptionValue "SelectEngineType"
+{
+	1, "Zandronum"
+	0, "GZDoom/LZDoom"
+}
+
+OptionValue "genderoption"
+{
+	1, "Female"
+	0, "Male"
+}
+
+OptionValue "screenblocksize"
+{
+	10, "Classic HUD"
+	11, "Custom HUDs"
+	12, "No HUD"
+}
+
+OptionValue "HUDType"
+{
+	1, "Brutal Simple"
+	2, "Minimalist"
+	3, "Full Helmet"
+}
+
+OptionValue "UIScaleSize"
+{
+	1, "1"
+	2, "2"
+	3, "3"
+	4, "4"
+	5, "5"
+	6, "6"
+	7, "7"
+	8, "8"
+}
+
+OptionValue "maxdecals"
+{
+	1, "0"
+	128, "128"
+	512, "512"
+	1024, "1024"
+	2056, "2056"
+	5102, "5102"
+	10000, "10000"
+  15000, "15000"
+  20000, "20000"
+}
+
+OptionValue "maxgibs"
+{
+	1, "0"
+	64, "64"
+	100, "100"
+	500, "500"
+	1000, "1000"
+	2000, "2000"
+	5000, "5000"
+	10000, "10000"
+	25000, "25000"
+	50000, "50000"
+}

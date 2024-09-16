@@ -1,0 +1,32 @@
+///////////////////////////////////////////////////// 
+// Full Helmet HUD   
+AMMOFONT
+	{
+		0 STYSNUM0
+		1 STYSNUM1
+		2 STYSNUM2
+		3 STYSNUM3
+		4 STYSNUM4
+		5 STYSNUM5
+		6 STYSNUM6
+		7 STYSNUM7
+		8 STYSNUM8
+		9 STYSNUM9
+	}
+
+/////////////////////////////////////////////////
+//Font for fullscreen hud   
+AANUM3
+{
+	0 AA3NUM0
+	1 AA3NUM1
+	2 AA3NUM2
+	3 AA3NUM3
+	4 AA3NUM4
+	5 AA3NUM5
+	6 AA3NUM6
+	7 AA3NUM7
+	8 AA3NUM8
+	9 AA3NUM9
+	/ AASLAS
+}

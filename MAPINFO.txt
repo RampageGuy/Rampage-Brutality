@@ -1,0 +1,157 @@
+map TITLEMAP "PB_Introduction"
+{
+	music = "Titlemap"
+}
+
+episode EDAY01
+{
+optional
+name = "Extermination Day"
+}
+
+map TEST "UAC Testing Center"
+{
+next = "MAP01"
+secretnext = "MAP01"
+sky1 = "SKYEAR1", 0.1
+cluster = 1
+music = R_TEST
+}
+
+map TEST_OLD "UAC Testing Center (old)"
+{
+next = "MAP01"
+secretnext = "MAP01"
+sky1 = "SKYEAR1", 0.1
+cluster = 1
+music = R_TEST
+}
+
+
+clearskills
+
+Skill baby
+{
+   AmmoFactor = 1.0
+   DamageFactor = 0.5
+   MonsterHealth = 0.5
+   EasyBossBrain
+   SlowMonsters
+   SpawnFilter = Baby
+   Textcolor = Green
+   
+   Name = "Power Fantasy"
+   MustConfirm = "The recommended difficulty for the dead. Press Y to Continue or N to Select Other Skill."
+}
+
+Skill easy
+{
+   AmmoFactor = 1
+   DamageFactor = 0.75
+   MonsterHealth = 0.75
+   SpawnFilter = Normal
+   Textcolor = Green
+   
+   Name = "Can I Play Daddy?"
+   MustConfirm = "The recommended difficulty for kids. Press Y to Continue or N to Select Other Skill."
+}
+Skill normal
+{
+   AmmoFactor = 1
+   DamageFactor = 0.90
+   MonsterHealth = 0.90
+   SpawnFilter = Normal
+   Textcolor = Gold
+   //DisableCheats
+   Name = "Harsh"
+   MustConfirm = "The recommended difficulty for newcomers to Project Brutality. Press Y to Continue or N to Select Other Skill."
+}
+
+Skill Hard
+{
+   AmmoFactor = 1
+   DamageFactor = 1.0
+ //  Aggressiveness = .10
+   SpawnFilter = Hard
+   Textcolor = Yellow
+   //DisableCheats
+   Name = "Brutal"
+   MustConfirm = "The true Project Brutality experiece. Press Y to Continue or N to Select Other Skill."
+}
+
+Skill Brutal
+{  
+   AmmoFactor = 1
+   DamageFactor = 1.25
+   SpawnFilter = Nightmare
+   Aggressiveness = 0.10
+   //DisableCheats
+   Textcolor = "Orange"
+   Name = "Man and a Half"
+   MustConfirm = "Your enemies are significantly more aggressive, inflict more damage, and are very proficient. Press Y to Continue or N to Select Other Skill."
+
+}
+
+Skill Superbad
+{
+   AmmoFactor = 1
+   DamageFactor = 1.0
+   FastMonsters
+   SpawnFilter = Nightmare
+   Textcolor = "Dark Red"
+   
+   Name = "12 on 10 Point Scale of Bad"
+   MustConfirm = "Your enemies are significantly faster. Press Y to Continue or N to Select Other Skill."
+}
+
+Skill BlackMetal
+{
+   AmmoFactor = 1
+   DamageFactor = 1.25
+   MonsterHealth = 1.20
+   SpawnFilter = Nightmare
+   Aggressiveness = 0.15
+   
+   Name = "I AM THE PAINKILLER!!!"
+   Textcolor = "Reddish Brick"
+   MustConfirm = "Your enemies have 20% more health, are extremely aggressive, and inflict more damage.  Press Y if you can take it!"
+}
+
+Skill HELL
+{
+   AmmoFactor = 1
+   DamageFactor = 1.50
+   MonsterHealth = 1.20
+   FastMonsters
+   Aggressiveness = 0.20
+   SpawnFilter = Nightmare
+   Textcolor = Red
+   
+  // PicName = "M_NMARE"
+   name = "Last Man on Earth"
+   mustconfirm = "The monsters you will face came straight out of the depths of hell. You will learn to fear and respect what true terror is. Press Y to start your death wish."
+}
+/*
+Skill Realistic
+{
+   DamageFactor = 9.0
+   MonsterHealth = 0.4
+   FriendlyHealth = 0.4
+   ACSReturn = 32
+   //FastMonsters
+   
+   SpawnFilter = hard
+   name = "Realism Mode"
+   Textcolor = Black
+   PicName = "M_NMARE"
+   mustconfirm = "Do you have what it takes to survive? Press Y or N"
+}
+*/
+
+GameInfo
+{
+DimColor = "Black"
+DimAmount = 0.70
+NoRandomPlayerClass = True
+}
+

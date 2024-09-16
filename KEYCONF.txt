@@ -1,0 +1,90 @@
+clearplayerclasses
+addplayerclass RB_Doomer
+
+addkeysection "Rampage Brutality - Advanced Actions" BrutalDoomActions
+
+	addmenukey "Kick" kickem
+	alias kickem "pukename \"BDKick\""
+	defaultbind Q kickem
+	
+	addmenukey "Dash" +User3
+	alias +User3
+	defaultbind Alt +User3
+
+	addmenukey "Reload" reload
+	alias reload "pukename \"BDReload\""
+	defaultbind R reload
+
+	AddMenuKey "Toggle Flashlight" "ToggleFlashlight"
+	Alias "ToggleFlashlight" "PukeName ToggleFlashlight"
+Alias "PVBeam" "b_flashlightvpos 18"
+Alias "PVDark" "b_flashlightvpos 32"
+
+Alias "PHBeam" "b_flashlighthpos 0"
+Alias "PHDark" "b_flashlighthpos 4"
+Alias "PHLShouder" "b_flashlighthpos -36"
+Alias "PHRShouder" "b_flashlighthpos 36"
+	defaultbind F flashlightswitch
+   
+   AddMenuKey "Quick Melee/Execution" punchem
+   Alias punchem "puke 3757"
+   DefaultBind F punchem
+
+	//addmenukey "Unload Gun" unreloader
+	//alias unreloader "pukename \"BDUnload\""
+
+	addmenukey "Quick Select Fists" quickfist
+	alias quickfist "pukename \"BDQuickFist\""
+
+addkeysection "Rampage Brutality - Interactions" BrutalDoomInteractions
+
+	addmenukey "Offend" brutaltaunt
+	alias brutaltaunt "pukename \"BDTaunt\""
+	defaultbind H brutaltaunt
+
+	addmenukey "Wave(1)" wave1
+	alias wave1 "pukename \"BDSaluteOne\""
+	defaultbind V wave1
+
+	addmenukey "Wave(2)" wave2
+	alias wave2 "pukename \"BDSaluteTwo\""
+	defaultbind N wave2
+
+	addmenukey "Advanced Taunt" advtaunt
+	alias advtaunt "pukename \"BDAdvTaunt\""
+	defaultbind J advtaunt
+	
+	
+
+	addmenukey "One-Liners" oneliner
+	alias oneliner "pukename \"BDOneLiner\""
+	defaultbind K oneliner
+
+	addmenukey "Activate Weapon Special" dual
+	alias dual "pukename \"BDDualWield\""
+	defaultbind X dual
+	
+	AddMenuKey "Weapon Special Action 2" weaponspecial
+   Alias weaponspecial "puke 3756"
+   DefaultBind Y weaponspecial
+   
+   addmenukey "Weapon Special Action 3" WeaponSpecial3
+	alias WeaponSpecial3 "pukename Special3"
+	defaultbind Z WeaponSpecial3
+   
+   AddMenuKey "Activate Equipment" grenadetoss
+   Alias grenadetoss "pukename EquipmentHotkey"
+   DefaultBind G grenadetoss
+   Alias usegren "grenadetoss"
+   
+   AddMenuKey "Toggle Equipment" usemine
+   Alias usemine "pukename ToggleEquipmentHotkey"
+   DefaultBind H usemine
+
+addkeysection "Rampage Brutality - Advanced Moves" BrutalDoomAdvMoves
+
+	addmenukey "Roll Left" roleft
+	alias roleft "pukename \"BDRollLeft\""
+
+	addmenukey "Roll Right" roright
+	alias roright "pukename \"BDRollRight\""

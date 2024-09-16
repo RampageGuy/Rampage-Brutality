@@ -1,0 +1,299 @@
+//Doomguy's Sounds
+$playeralias player	male *land land
+$random land { land1 land2 land3 land4 land5 land6 }
+land1	jmpland1
+land2	jmpland2
+land3	jmpland3
+land4	jmpland4
+land5	jmpland5
+land6   jmpland6
+
+$random pl_death { player/death1 player/death2 player/death3 }
+
+player/death1 BIGSCREA
+player/death2 DSFDTHG
+player/death3 DSFDTHE
+
+$playeralias           player  male    *death          pl_death
+
+
+
+//PlayerSounds
+$playersound	player	male	*death		dspldeth
+$playersound	player	male	*xdeath		dspdiehi
+$playersound	player	male	*gibbed		dsslop
+$playersound	player	male	*fist		dspunch
+$playersound	player	male	*usefail	dsnoway
+// Player Pain Sounds
+// 100 Pain
+$random player/pain100	{ pp10 }
+pp10 pain1
+$playeralias    player  male    *pain100    player/pain100
+// 75 Pain
+$random player/pain75	{ pp20 pp21 }
+pp20 pain2
+pp21 pa1n2
+$playeralias    player  male    *pain75    player/pain75
+// 50 Pain
+$random player/pain50	{ pp30 pp31 }
+pp30 pain3
+pp31 pain4
+$playeralias    player  male    *pain50    player/pain50
+// 25 Pain
+$random player/pain25	{ pp40 pp41 pp42 pp43 }
+pp40 pain5
+pp41 pain6
+pp42 pa1n5
+pp43 pa1n6
+$playeralias    player male *pain25 player/pain25
+$playeralias	player	male
+
+$random DSFPAIN { DSFPAIN1 DSFPAIN2 DSFPAIN3 DSFPAIN4 DSFPAIN5 DSFPAIN6 DSFPAIN7 }
+DSFPAIN1 DSFPAIN1
+DSFPAIN2 DSFPAIN2
+DSFPAIN3 DSFPAIN3
+DSFPAIN4 DSFPAIN4
+DSFPAIN5 DSFPAIN5
+DSFPAIN6 DSFPAIN6
+DSFPAIN7 DSFPAIN7
+
+$random DSFEMUF { dsfnowa1 dsfnowa2 dsfnowa3 }
+dsfnowa3 dsfnowa3
+dsfnowa2 dsfnowa2
+dsfnowa1 dsfnowa1
+
+$random MTAUN { MTAUN01 MTAUN02 MTAUN03 MTAUN04 MTAUN05 MTAUN06 }
+MTAUN01 MTAUN01
+MTAUN02 MTAUN02
+MTAUN03 MTAUN03
+MTAUN04 MTAUN04
+MTAUN05 MTAUN05
+MTAUN06 MTAUN06
+$limit MTAUN 1
+
+LANDS1 LANDS1
+$limit PlayerLandSound 3
+
+$random FTAUNT { FTAUNT1 FTAUNT2 FTAUNT3 FTAUNT4}
+FTAUNT1 FTAUNT1
+FTAUNT2 FTAUNT2
+FTAUNT3 FTAUNT3
+FTAUNT4 FTAUNT4
+
+$playersound	player	male	BIGSCRE		bigscrea
+$playersound	player	female	BIGSCRE		DSFDIEHI
+$playersound	player	female	*death		DSFDETH
+
+DSFDTHE BIGSCRE
+
+DSSALUTE DSSALUTE
+$playersound	player	male	SALUTE		DSSALUTE
+$playersound	player	female	SALUTE		DSFTAUN2
+
+$limit FUCK 1
+
+$random FUCK { FUCK1 FUCK2 FUCK3 FUCK4 FUCK5 FUCK6 }
+FUCK1 FUCK1
+FUCK2 FUCK2
+FUCK3 FUCK3
+FUCK4 FUCK4
+FUCK5 FUCK5
+FUCK6 FUCK6
+
+ICOSCRE ICOSCRE
+ICOBREAT ICOBREAT
+ICOTHUND ICOTHUND
+ICOFIRE ICOFIRE
+ICOLAUG ICOLAUG
+NUKEEXPL NUKEEXPL
+$volume ICOLAUG 2.0
+
+ACIDMELT ACIDMELT
+
+FLASHON FLASHON
+flashlight/click	click
+FLASHOFF FLASHOFF
+INFRARED INFRARED
+
+$rolloff ICOLAUG 4000 6400
+$rolloff ICOFIRE 4000 6400
+$rolloff ICOBREAT 4000 6400
+$rolloff ICOSCRE 4000 6400
+
+NUKEEXP NUKEEXP
+$rolloff NUKEEXP 8000 12000
+
+$random HEDBON { HEDBON1 HEDBON2 HEDBON3 }
+HEDBON1 HEDBON1
+HEDBON2 HEDBON2
+HEDBON3 HEDBON3
+DSASHTBT DSASHTBT
+
+DSTELEPT DSTELEPT
+// Taunts
+$random TAUNT0 { TAUNT01 TAUNT02 TAUNT03 TAUNT04 TAUNT05 TAUNT06 TAUNT07 TAUNT08 TAUNT09 TAUNT10 TAUNT11 TAUNT12 TAUNT13 TAUNT14 TAUNT15 TAUNT16 }
+TAUNT01 TAUNT01
+TAUNT02 TAUNT02
+TAUNT03 TAUNT03
+TAUNT04 TAUNT04
+TAUNT05 TAUNT05
+TAUNT06 TAUNT06
+TAUNT07 TAUNT07
+TAUNT08 TAUNT08
+TAUNT09 TAUNT09
+TAUNT10 TAUNT10
+TAUNT11 TAUNT11
+TAUNT12 TAUNT12
+TAUNT13 TAUNT13
+TAUNT14 TAUNT14
+TAUNT15 TAUNT15
+TAUNT16 TAUNT16
+$limit TAUNT0 1
+$random CrueltyBonus { TAUNT0 ONELIN NOTHING NOTHING NOTHING NOTHING NOTHING NOTHING }
+BIGSCREA BIGSCREA
+// One-Liners
+$random ONELIN { ONELIN01 ONELIN02 ONELIN03 ONELIN04 ONELIN05 ONELIN06 ONELIN07 ONELIN08 ONELIN09 ONELIN10 ONELIN11 ONELIN12}
+ONELIN01 ONELIN01
+ONELIN02 ONELIN02
+ONELIN03 ONELIN03
+ONELIN04 ONELIN04
+ONELIN05 ONELIN05
+ONELIN06 ONELIN06
+ONELIN07 ONELIN07
+ONELIN08 ONELIN08
+ONELIN09 ONELIN09
+ONELIN10 ONELIN10
+ONELIN11 ONELIN11
+ONELIN12 ONELIN12
+$limit ONELIN 1
+
+//Putting on Helmet
+HLMTPUT HLMTPUT
+HLMTBEP HLMTBEP
+HLMTBPP HLMTBPP
+RSUP1 RSUP1
+RSUP2 RSUP2
+$random helmet/swipe	{ HELMSWI1 /*HEMLSWI2*/ HELMSWI3 }
+HELMSWI1 HELMSWI1
+//HELMSWI2 HELMSWI2 Doesn't actually exist.
+HELMSWI3 HELMSWI3
+
+$random PIKUPTALK { PIKUPTALK1 PIKUPTALK2 PIKUPTALK3 PIKUPTALK4 }
+PIKUPTALK1 PIKUPTALK1
+PIKUPTALK2 PIKUPTALK2
+PIKUPTALK3 PIKUPTALK3
+PIKUPTALK4 PIKUPTALK4
+
+// Player Land Sounds
+$playeralias player	male *land land
+$random land { land1 land2 land3 land4 land5 land6 }
+land1	jmpland1
+land2	jmpland2
+land3	jmpland3
+land4	jmpland4
+land5	jmpland5
+land6   jmpland6
+
+$random pl_death { player/death1 player/death2 player/death3 }
+
+player/death1 BIGSCREA
+player/death2 DSFDTHG
+player/death3 DSFDTHE
+
+$playeralias           player  male    *death          pl_death
+
+
+
+//PlayerSounds
+$playersound	player	male	*death		dspldeth
+$playersound	player	male	*xdeath		dspdiehi
+$playersound	player	male	*gibbed		dsslop
+$playersound	player	male	*fist		dspunch
+$playersound	player	male	*usefail	dsnoway
+// Player Pain Sounds
+// 100 Pain
+$random player/pain100	{ pp10 }
+pp10 pain1
+$playeralias    player  male    *pain100    player/pain100
+// 75 Pain
+$random player/pain75	{ pp20 pp21 }
+pp20 pain2
+pp21 pa1n2
+$playeralias    player  male    *pain75    player/pain75
+// 50 Pain
+$random player/pain50	{ pp30 pp31 }
+pp30 pain3
+pp31 pain4
+$playeralias    player  male    *pain50    player/pain50
+// 25 Pain
+$random player/pain25	{ pp40 pp41 pp42 pp43 }
+pp40 pain5
+pp41 pain6
+pp42 pa1n5
+pp43 pa1n6
+$playeralias    player male *pain25 player/pain25
+$playeralias	player	male
+
+$random DSFPAIN { DSFPAIN1 DSFPAIN2 DSFPAIN3 DSFPAIN4 DSFPAIN5 DSFPAIN6 DSFPAIN7 }
+DSFPAIN1 DSFPAIN1
+DSFPAIN2 DSFPAIN2
+DSFPAIN3 DSFPAIN3
+DSFPAIN4 DSFPAIN4
+DSFPAIN5 DSFPAIN5
+DSFPAIN6 DSFPAIN6
+DSFPAIN7 DSFPAIN7
+
+$random DSFEMUF { dsfnowa1 dsfnowa2 dsfnowa3 }
+dsfnowa3 dsfnowa3
+dsfnowa2 dsfnowa2
+dsfnowa1 dsfnowa1
+
+$random MTAUN { MTAUN01 MTAUN02 MTAUN03 MTAUN04 MTAUN05 MTAUN06 }
+MTAUN01 MTAUN01
+MTAUN02 MTAUN02
+MTAUN03 MTAUN03
+MTAUN04 MTAUN04
+MTAUN05 MTAUN05
+MTAUN06 MTAUN06
+$limit MTAUN 1
+
+LANDS1 LANDS1
+$limit PlayerLandSound 3
+
+$random FTAUNT { FTAUNT1 FTAUNT2 FTAUNT3 FTAUNT4}
+FTAUNT1 FTAUNT1
+FTAUNT2 FTAUNT2
+FTAUNT3 FTAUNT3
+FTAUNT4 FTAUNT4
+
+$playersound	player	male	BIGSCRE		bigscrea
+$playersound	player	female	BIGSCRE		DSFDIEHI
+$playersound	player	female	*death		DSFDETH
+
+DSFDTHE BIGSCRE
+
+DSSALUTE DSSALUTE
+$playersound	player	male	SALUTE		DSSALUTE
+$playersound	player	female	SALUTE		DSFTAUN2
+
+$limit FUCK 1
+
+//Slide Kicks
+$random SlideKick/Start { SLYDSTRT1 SLYDSTRT2 SLYDSTRT3 }
+SLYDSTRT1	SLIDSTR1
+SLYDSTRT2	SLIDSTR2
+SLYDSTRT3	SLIDSTR3
+
+$random SlideKick/Loop { SLYDLUP1 SLYDLUP2 SLYDLUP3 SLYDLUP4 }
+SLYDLUP1	SLIDLUP1
+SLYDLUP2	SLIDLUP2
+SLYDLUP3	SLIDLUP3
+SLYDLUP4	SLIDLUP4
+
+$random SlideKick/End { SLYDEND1 SLYDEND2 }
+SLYDEND1	SLIDEND1
+SLYDEND2	SLIDEND2
+
+player/powerevade	dash1
+player/powerevade	dash2
+player/evaderdy		dshredy

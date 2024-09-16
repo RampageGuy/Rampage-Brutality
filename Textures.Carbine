@@ -1,0 +1,31 @@
+Sprite "4AFZY0", 400, 400
+{
+	XScale 4.05
+	YScale 4.05
+	Offset -514, -161
+	Patch "4AFZY0", 0, 0 
+}
+
+Sprite "5AFZA0", 400, 400
+{
+	XScale 4.05
+	YScale 4.05
+	Offset -514, -161
+	Patch "5AFZA0", 0, 0
+}
+
+Sprite "5AFZB0", 400, 400
+{
+	XScale 3.75
+	YScale 3.75
+	Offset -465, -141
+	Patch "5AFZB0", 0, 0
+}
+
+Sprite "5AFZC0", 400, 400
+{
+	XScale 3.45
+	YScale 3.45
+	Offset -418, -121
+	Patch "5AFZC0", 0, 0
+}

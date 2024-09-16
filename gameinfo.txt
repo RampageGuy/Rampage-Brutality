@@ -1,0 +1,5 @@
+STARTUPTYPE = "Hexen"
+STARTUPTITLE = "Rampage Brutality Staging"
+STARTUPCOLORS = "#FF0000", "000000"
+STARTUPSONG = "STARTUP"
+   
